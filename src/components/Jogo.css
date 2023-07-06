@@ -1,0 +1,28 @@
+
+
+:root {
+    --cor1: #142d4c;
+    --cor2: #385170;
+    --cor3: #9fd3c7;
+    --cor4: #ececec;
+    --cor5: #213e3b;
+    --cor6: blueviolet;
+    --cor7: #1e90ff;
+  }
+
+body {
+    color: #e8ffff;
+    background-color: #213e3b;
+    margin: 20px;
+    text-align: center;
+}
+
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-self: stretch;
+    gap: 20px;
+}
+
