@@ -6,6 +6,8 @@ export class JogoModel{
     pontuacao2: number;
     sets1: number;
     sets2: number;
+    finalizado: boolean;
+    vencedor: string;
 
     constructor(){
 
@@ -15,6 +17,8 @@ export class JogoModel{
         this.pontuacao2 = 0;
         this.sets1 = 0;
         this.sets2 = 0;
+        this.finalizado = false;
+        this.vencedor = "";
 
     }
 

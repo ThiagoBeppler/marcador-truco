@@ -10,8 +10,16 @@ function Jogo(){
     return(
 
         <div>
-            <br />
             <h2>Marcador de Truco</h2>
+
+            {jogo.finalizado && 
+            <div>
+
+                <p>Jogo Finalizado</p>
+                <p>Vencedor: {jogo.vencedor}</p>
+
+            </div> }
+
             <div className="container">
 
                 <div className="jogador">
@@ -29,7 +37,7 @@ function Jogo(){
                     <p>{jogo.jogador1}</p>
                     <p>{jogo.pontuacao1}</p>
                     <p>{jogo.sets1}</p>
-                    <button onClick={() => setJogo(Pontuar(jogo, 1))}>Pontuar 1</button>
+                    <button onClick={() => setJogo(Pontuar(jogo, 1))} disabled={jogo.finalizado}>Pontuar 1</button>
 
                 </div>
 
@@ -38,7 +46,7 @@ function Jogo(){
                     <p>{jogo.jogador2}</p>
                     <p>{jogo.pontuacao2}</p>
                     <p>{jogo.sets2}</p>
-                    <button onClick={() => setJogo(Pontuar(jogo, 2))}>Pontuar 2</button>
+                    <button onClick={() => setJogo(Pontuar(jogo, 2))} disabled={jogo.finalizado}>Pontuar 2</button>
 
                 </div>
 
@@ -72,10 +80,12 @@ function Pontuar(jogo: JogoModel, duplaPontuar: number){
         novoJogo.sets2 ++
     }
         
-    if(novoJogo.sets1 > 1 || novoJogo.sets1 > 1){
-        //finalizarJogo
-    }
+    if(novoJogo.sets1 > 1 || novoJogo.sets2 > 1){
 
+        novoJogo.finalizado = true;
+        novoJogo.vencedor = novoJogo.sets1 > novoJogo.sets2 ? novoJogo.jogador1 : novoJogo.jogador2;
+    }
+    
     return (novoJogo)
 }
 
@@ -87,6 +97,8 @@ function NovoJogo(jogo: JogoModel){
     novoJogo.pontuacao2 = 0;
     novoJogo.sets1 = 0;
     novoJogo.sets2 = 0;
+    novoJogo.vencedor = "";
+    novoJogo.finalizado = false;
 
     return(novoJogo)
 }
