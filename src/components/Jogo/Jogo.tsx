@@ -89,6 +89,7 @@ function Pontuar(jogo: JogoModel, duplaPontuar: number){
     return (novoJogo)
 }
 
+
 function NovoJogo(jogo: JogoModel){
 
     let novoJogo = {...jogo}
