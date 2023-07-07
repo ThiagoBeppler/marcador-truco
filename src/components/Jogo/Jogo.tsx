@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { JogoModel } from "../../models/JogoModel"
 
 import "./Jogo.css"
 
 function Jogo(){
 
-    const [jogo, setJogo] = useState(new JogoModel);
+    let jogoStorage = new JogoModel;
+    
+    let teste  = localStorage.getItem('jogo');
+
+    if(teste)
+        jogoStorage = JSON.parse(teste);
+
+
+    const [jogo, setJogo] = useState(jogoStorage);
+
+    useEffect(()=> {
+        localStorage.setItem('jogo', JSON.stringify( jogo))
+    }, [jogo])
 
     return(
 
