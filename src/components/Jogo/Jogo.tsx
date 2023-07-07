@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { JogoModel } from "../models/JogoModel"
+import { JogoModel } from "../../models/JogoModel"
 
 import "./Jogo.css"
 
