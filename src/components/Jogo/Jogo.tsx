@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { JogoModel } from "../../models/JogoModel"
 
+import { FaGear } from "react-icons/fa6";
+
+
 import "./Jogo.css"
 
 function Jogo(){
@@ -22,7 +25,15 @@ function Jogo(){
     return(
 
         <div>
-            <h2>Marcador de Truco</h2>
+            <div className="containerTiluto">
+                <div  id="iconeConfig"> <FaGear /> </div>
+                
+                <h2 >  Marcador de Truco  </h2>  
+
+                <div  className="invisivel"> <FaGear /> </div>
+
+
+            </div>
 
             {jogo.finalizado && 
             <div>

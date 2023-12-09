@@ -12,7 +12,7 @@
 
 body {
     color: #e8ffff;
-    background-color: #213e3b;
+    background-color: var(--cor5);
     margin: 20px;
     text-align: center;
 }
@@ -31,3 +31,19 @@ body {
     color: var(--cor5);
     background-color: var(--cor4);
 } */
+
+.containerTiluto{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.h2{
+    text-align: center;
+    flex-grow: 1; /* Faz o h2 ocupar todo o espaço restante */
+
+}
+
+.invisivel{
+    color: var(--cor5);
+}
